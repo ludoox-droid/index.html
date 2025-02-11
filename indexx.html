@@ -1,0 +1,25 @@
+<div style="width: 400px; height: 150px; display: flex; justify-content: center; align-items: center; border-radius: 15px; padding: 10px; background-color: transparent;">
+  <!-- Orologio con font carino e rosa pastello -->
+  <div style="font-family: 'Pacifico', cursive; color: #FFB6C1; font-size: 40px; font-weight: bold; margin-right: 20px;" id="clock"></div>
+  
+  <!-- GIF -->
+  <img src="https://media.tenor.com/zVvViQKqa0MAAAAj/psybirdb1oom.gif" alt="Psybird GIF" style="width: 80px; height: 80px; object-fit: cover; border-radius: 10px;">
+</div>
+
+<script>
+  function updateClock() {
+    var now = new Date();
+    var hours = now.getHours();
+    var minutes = now.getMinutes();
+    var seconds = now.getSeconds();
+
+    minutes = minutes < 10 ? '0' + minutes : minutes;
+    seconds = seconds < 10 ? '0' + seconds : seconds;
+
+    var timeString = hours + ':' + minutes + ':' + seconds;
+    document.getElementById('clock').innerText = timeString;
+  }
+
+  setInterval(updateClock, 1000);
+  updateClock();  // Call once to avoid delay
+</script>
